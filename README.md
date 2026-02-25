@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+#  Don Pepe – Proyecto Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto web desarrollado con:
 
-Currently, two official plugins are available:
+- React
+- TypeScript
+- Vite
+- TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# ¿Qué necesito antes de empezar?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Solo necesitas tener instalado:
 
-## Expanding the ESLint configuration
+# Node.js  
+Descárgalo desde:  
+ https://nodejs.org/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Después de instalarlo, verifica en tu terminal:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+node -v 20.20.0
+npm -v 11.7.0
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Cómo ejecutar el proyecto
+git clone https://github.com/MiguelAlturo/landing-page-react.git
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Instalar dependencias
+npm install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Iniciar el proyecto
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Después abre tu navegador en
+http://localhost:5173
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Crear versión para producción
+npm run build
+
+# Estructura del proyecto
+src/
+│
+├── components/
+│   ├── header/
+│   ├── heroBanner/
+│   ├── mediaContentSection/
+│   ├── productCarousel/
+│   ├── gridImages/
+│   └── footer/
+│
+├── App.tsx
+├── main.tsx
+└── App.css
+
+# Componentes principales
+El proyecto está compuesto por:
+Header → Barra de navegación superior
+HeroBanner → Banner principal
+MediaContentSection → Sección con imagen y texto (puede invertirse)
+ProductCarousel → Carrusel de productos dinámico
+GridImages → Grilla de imágenes
+Footer → Información institucional y enlaces
+
+# Problemas comunes
+# Error: "Cannot find module" usa:
+rm -rf node_modules
+npm install
+
+#AUTOR
+Miguel Angel Caballero García
+Proyecto personal de práctica y desarrollo con React.
+---
+
+Este README:
+- Refleja tu estructura real
+- Explica cómo correrlo
+- Explica qué hace cada componente
+- Está listo para GitHub
+- Es claro para alguien que no sabe React
